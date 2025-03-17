@@ -48,7 +48,7 @@ public class Inscription extends JFrame {
 			public void run() {
 				try {
 					// Set JTattoo Look and Feel
-		            UIManager.setLookAndFeel(new SmartLookAndFeel());
+//		            UIManager.setLookAndFeel(new SmartLookAndFeel());
 					Inscription window = new Inscription();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

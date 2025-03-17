@@ -107,7 +107,7 @@ public class Connexion extends JFrame {
 				try {
 
 		            // Set JTattoo Look and Feel
-		            UIManager.setLookAndFeel(new SmartLookAndFeel());
+//		            UIManager.setLookAndFeel(new SmartLookAndFeel());
 					Connexion window = new Connexion();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
