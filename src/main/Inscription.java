@@ -49,6 +49,7 @@ public class Inscription extends JFrame {
 				try {
 					// Set JTattoo Look and Feel
 //		            UIManager.setLookAndFeel(new SmartLookAndFeel());
+					// VErif
 					Inscription window = new Inscription();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
