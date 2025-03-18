@@ -51,6 +51,7 @@ public class Inscription extends JFrame {
 //		            UIManager.setLookAndFeel(new SmartLookAndFeel());
 					// VErif
 					Inscription window = new Inscription();
+					// Nouvelle Test
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
