@@ -1,38 +1,32 @@
-name: Build
-
+   name: Build
 on:
   push:
     branches:
       - master
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   sonarqube:
-    name: SonarQube Analysis
+    name: SonarQube
     runs-on: macos-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensures a complete clone for better analysis
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: 11
-
-      - name: Cache SonarQube packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: sonar-scanner-${{ runner.os }}-${{ hashFiles('**/*.properties') }}
-
-      - name: Run SonarQube Scan
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+        
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
        
+# Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+sonar.sources=./src
+sonar.java.binaries=./bin
+
+#Language
+
+sonar.language=java
+
+# Encoding of the source code. Default is default system encoding
+sonar.sourceEncoding=UTF-8
            
